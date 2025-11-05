@@ -73,10 +73,65 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
-        <ScrollController>
-          {children}
-        </ScrollController>
+      <head>
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://images.prismic.io" crossOrigin="" />
+
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="//cdn.prismic.io" />
+        <link rel="dns-prefetch" href="//images.prismic.io" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutomotiveBusiness",
+              "name": "3D Car Showroom",
+              "description": "Interactive 3D car showroom featuring luxury vehicles with advanced visualization technology",
+              "url": process.env.NEXT_PUBLIC_SITE_URL,
+              "logo": {
+                "@type": "ImageObject",
+                "url": `${process.env.NEXT_PUBLIC_SITE_URL}/images/logo.png`
+              },
+              "image": `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+              "sameAs": [
+                "https://twitter.com/3dcarshowroom",
+                "https://instagram.com/3dcarshowroom"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+              },
+              "openingHours": "Mo-Su 00:00-23:59",
+              "priceRange": "$$-$$$$",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Vehicle Collection",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Car",
+                      "name": "Luxury Vehicles",
+                      "vehicleConfiguration": "3D Interactive Showroom"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+      </head>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground`}>
+        <ErrorBoundary>
+          <ScrollController>
+            {children}
+          </ScrollController>
+        </ErrorBoundary>
       </body>
     </html>
   )
