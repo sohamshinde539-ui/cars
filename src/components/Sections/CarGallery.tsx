@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { CarModel, FilterOptions, SortOptions } from '@/types'
 import { FadeInUp, StaggerContainer } from '@/components/Animation/ScrollController'
 import { CarViewer } from '@/components/3D/CarViewer'
