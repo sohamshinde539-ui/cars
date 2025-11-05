@@ -12,15 +12,14 @@
   "dependencies": {
     "@next/third-parties": "^14.2.5",
     "@prismicio/client": "^7.8.4",
-    "@prismicio/helpers": "^7.2.0",
     "@prismicio/react": "^2.7.3",
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.11",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.4",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sharp": "^0.33.1",
     "three": "^0.159.0",
     "zustand": "^4.4.7"
@@ -30,11 +29,12 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/three": "^0.159.0",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.2",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
