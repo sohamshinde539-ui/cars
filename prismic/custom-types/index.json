@@ -1,0 +1,360 @@
+{
+  "car_model": {
+    "Main": {
+      "car_name": {
+        "type": "Text",
+        "config": {
+          "label": "Car Name",
+          "placeholder": "e.g., Model S Plaid",
+          "required": true
+        }
+      },
+      "brand": {
+        "type": "Select",
+        "config": {
+          "label": "Brand",
+          "required": true,
+          "options": [
+            "BMW",
+            "Mercedes-Benz",
+            "Audi",
+            "Tesla",
+            "Porsche",
+            "Lamborghini",
+            "Ferrari",
+            "McLaren",
+            "Aston Martin",
+            "Jaguar",
+            "Land Rover",
+            "Bentley",
+            "Rolls Royce",
+            "Genesis",
+            "Lexus",
+            "Infiniti",
+            "Acura",
+            "Cadillac",
+            "Lincoln"
+          ]
+        }
+      },
+      "car_type": {
+        "type": "Select",
+        "config": {
+          "label": "Car Type",
+          "required": true,
+          "options": [
+            "SUV",
+            "Sedan",
+            "Sports Car",
+            "Convertible",
+            "Truck",
+            "Van",
+            "Coupe",
+            "Hatchback",
+            "Wagon",
+            "Hybrid",
+            "Electric",
+            "Luxury",
+            "Performance"
+          ]
+        }
+      },
+      "price_category": {
+        "type": "Select",
+        "config": {
+          "label": "Price Category",
+          "required": true,
+          "options": ["Budget", "Premium", "Luxury", "Exotic"]
+        }
+      },
+      "model_year": {
+        "type": "Number",
+        "config": {
+          "label": "Model Year",
+          "required": true,
+          "min": 1900,
+          "max": 2030
+        }
+      },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "Price (USD)",
+          "required": true,
+          "min": 0
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "multi": "paragraph,heading2,heading3,strong,em,hyperlink,list-item,o-list-item",
+          "allowTargetBlank": true,
+          "placeholder": "Describe this car model..."
+        }
+      }
+    },
+    "3D Model": {
+      "model_file": {
+        "type": "Image",
+        "config": {
+          "label": "3D Model File",
+          "constraint": { "width": 2048, "height": 2048 },
+          "thumbnails": [],
+          "accepts": ["glb", "gltf"],
+          "required": true
+        }
+      },
+      "model_thumbnail": {
+        "type": "Image",
+        "config": {
+          "label": "Model Thumbnail",
+          "constraint": { "width": 800, "height": 600 },
+          "thumbnails": [{ "name": "thumbnail", "width": 300, "height": 200 }],
+          "required": true
+        }
+      },
+      "alternate_views": {
+        "type": "Group",
+        "config": {
+          "label": "Alternate Views",
+          "fields": {
+            "view_image": {
+              "type": "Image",
+              "config": {
+                "label": "View Image",
+                "constraint": { "width": 1024, "height": 768 },
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "Media": {
+      "photo_gallery": {
+        "type": "Group",
+        "config": {
+          "label": "Photo Gallery",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Gallery Image",
+                "constraint": { "width": 1920, "height": 1080 },
+                "thumbnails": [
+                  { "name": "thumbnail", "width": 400, "height": 300 }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "video_url": {
+        "type": "Link",
+        "config": {
+          "label": "Video URL",
+          "placeholder": "https://www.youtube.com/watch?v=...",
+          "select": "media",
+          "allowTargetBlank": true
+        }
+      },
+      "brochure_pdf": {
+        "type": "Image",
+        "config": {
+          "label": "Brochure PDF",
+          "constraint": {},
+          "thumbnails": [],
+          "accepts": ["pdf"]
+        }
+      }
+    },
+    "Specifications": {
+      "engine_type": {
+        "type": "Text",
+        "config": {
+          "label": "Engine Type",
+          "placeholder": "e.g., V8 Twin-Turbo, Electric Motor"
+        }
+      },
+      "horsepower": {
+        "type": "Number",
+        "config": {
+          "label": "Horsepower",
+          "placeholder": "e.g., 450",
+          "min": 0
+        }
+      },
+      "zero_to_sixty": {
+        "type": "Number",
+        "config": {
+          "label": "0-60 mph (seconds)",
+          "placeholder": "e.g., 3.2",
+          "min": 0,
+          "max": 20
+        }
+      },
+      "fuel_efficiency": {
+        "type": "Number",
+        "config": {
+          "label": "Fuel Efficiency (MPG)",
+          "placeholder": "e.g., 25",
+          "min": 0
+        }
+      },
+      "transmission": {
+        "type": "Select",
+        "config": {
+          "label": "Transmission",
+          "options": [
+            "Automatic",
+            "Manual",
+            "CVT",
+            "Dual-Clutch",
+            "Electric",
+            "Hybrid"
+          ]
+        }
+      },
+      "dimensions": {
+        "type": "Group",
+        "config": {
+          "label": "Dimensions (inches)",
+          "fields": {
+            "length": {
+              "type": "Number",
+              "config": { "label": "Length", "min": 0, "placeholder": "e.g., 196" }
+            },
+            "width": {
+              "type": "Number",
+              "config": { "label": "Width", "min": 0, "placeholder": "e.g., 75" }
+            },
+            "height": {
+              "type": "Number",
+              "config": { "label": "Height", "min": 0, "placeholder": "e.g., 56" }
+            }
+          }
+        }
+      },
+      "weight": {
+        "type": "Number",
+        "config": {
+          "label": "Weight (lbs)",
+          "placeholder": "e.g., 4200",
+          "min": 0
+        }
+      },
+      "seating_capacity": {
+        "type": "Number",
+        "config": {
+          "label": "Seating Capacity",
+          "placeholder": "e.g., 5",
+          "min": 1,
+          "max": 8
+        }
+      },
+      "color_options": {
+        "type": "Group",
+        "config": {
+          "label": "Color Options",
+          "fields": {
+            "color_name": {
+              "type": "Text",
+              "config": { "label": "Color Name", "placeholder": "e.g., Midnight Black" }
+            },
+            "hex_code": {
+              "type": "Text",
+              "config": {
+                "label": "Hex Code",
+                "placeholder": "#000000",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SEO & Meta": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "SEO title for this car page",
+          "maxlen": 60
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "SEO description for this car page",
+          "maxlen": 160
+        }
+      },
+      "featured": {
+        "type": "Boolean",
+        "config": {
+          "label": "Featured Car",
+          "placeholder_true": "Show on homepage"
+        }
+      }
+    }
+  },
+  "feature_section": {
+    "Main": {
+      "section_title": {
+        "type": "Text",
+        "config": {
+          "label": "Section Title",
+          "placeholder": "e.g., Premium Features",
+          "required": true
+        }
+      },
+      "section_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Section Description",
+          "multi": "paragraph,heading2,strong,em,hyperlink",
+          "allowTargetBlank": true,
+          "placeholder": "Describe this feature section..."
+        }
+      }
+    },
+    "Display": {
+      "background_style": {
+        "type": "Select",
+        "config": {
+          "label": "Background Style",
+          "required": true,
+          "options": ["Video", "Image", "3D Model", "Gradient"]
+        }
+      },
+      "background_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background Image",
+          "constraint": { "width": 1920, "height": 1080 }
+        }
+      },
+      "background_video": {
+        "type": "Link",
+        "config": {
+          "label": "Background Video URL",
+          "placeholder": "https://...",
+          "select": "media"
+        }
+      }
+    },
+    "Action": {
+      "call_to_action_button": {
+        "type": "Link",
+        "config": {
+          "label": "Call to Action Button",
+          "placeholder": "Button text and destination",
+          "select": "web",
+          "allowTargetBlank": true
+        }
+      }
+    }
+  }
+}
