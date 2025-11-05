@@ -1,6 +1,7 @@
 import { Inter, Space_Grotesk } from 'next/font/google'
 import type { Metadata } from 'next'
 import { ScrollController } from '@/components/Animation/ScrollController'
+import { ErrorBoundary } from '@/components/UI/ErrorBoundary'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
